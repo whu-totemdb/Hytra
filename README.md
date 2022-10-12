@@ -17,7 +17,7 @@ Hytra is able to efficiently answer four typical types of queries now:
   * Optimized storage archtecure.
   * Key-Value store.
 * Fast search with
-  * Enriched index.
+  * Enriched indexes.
   * Various similarity measures.
 * Trajectory visulization in New York City
   * http://shengwang.site/bus/
