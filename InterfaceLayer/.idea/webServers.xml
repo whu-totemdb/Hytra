@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e1bbf873-534b-48ae-a9a1-519d27a79c16" name="MobileDB">
+        <fileTransfer rootFolder="/home/hyk" accessType="SFTP" host="47.105.33.143" port="22" sshConfigId="7d4a9393-56de-4509-8bb4-30d100ebf19e" sshConfig="MobileDB">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

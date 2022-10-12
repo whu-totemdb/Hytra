@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <targets>
+      <target name="MobileDB" type="ssh/sftp" uuid="caec61fa-67f0-4577-a2c5-827250e6c92b">
+        <config>
+          <option name="projectRootOnTarget" value="/home/hyk/Hytra-Exp" />
+          <option name="serverName" value="MobileDB" />
+          <option name="useRsync" value="true" />
+        </config>
+        <ContributedStateBase type="JavaLanguageRuntime">
+          <config>
+            <option name="homePath" value="/usr/local/java" />
+            <option name="javaVersionString" value="17.0.3" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>

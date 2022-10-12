@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Inverted_LSM"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_insert_operation">
+				<Option output="/home/rauchy/project/Inverted_LSM/cmake-build-debug/test_insert_operation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_insert_operation"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_insert_operation/fast">
+				<Option output="/home/rauchy/project/Inverted_LSM/cmake-build-debug/test_insert_operation" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_insert_operation/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Inverted_LSM">
+				<Option output="/home/rauchy/project/Inverted_LSM/cmake-build-debug/Inverted_LSM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 Inverted_LSM"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Inverted_LSM/fast">
+				<Option output="/home/rauchy/project/Inverted_LSM/cmake-build-debug/Inverted_LSM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/rauchy/project/Inverted_LSM/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 Inverted_LSM/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/rauchy/project/Inverted_LSM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/DiskLevel.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/DiskLevel.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/DiskRUN.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/DiskRUN.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/FileMapper.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/FileMapper.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/LSM.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/LSM.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/LSMUtils.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/MemLevel.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/MemLevel.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/MemRUN.cpp">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/MemRUN.h">
+			<Option target="test_insert_operation"/>
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/Server.cpp">
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/Server.h">
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/main.cpp">
+			<Option target="Inverted_LSM"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/test_insert_operation.cpp">
+			<Option target="test_insert_operation"/>
+		</Unit>
+		<Unit filename="/home/rauchy/project/Inverted_LSM/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

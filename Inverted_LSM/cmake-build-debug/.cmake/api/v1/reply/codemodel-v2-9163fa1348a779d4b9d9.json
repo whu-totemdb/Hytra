@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Inverted_LSM",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Inverted_LSM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Inverted_LSM-Debug-7c12f7ef0074f95d1b3b.json",
+					"name" : "Inverted_LSM",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_insert_operation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_insert_operation-Debug-c1669256bddc46739a67.json",
+					"name" : "test_insert_operation",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/hyk/Documents/GitHub/hytra/Inverted_LSM/cmake-build-debug",
+		"source" : "/Users/hyk/Documents/GitHub/hytra/Inverted_LSM"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

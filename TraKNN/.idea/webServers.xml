@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="997a53fc-fd75-4caa-a69f-c75dd3d1bf44" name="topk" url="http://47.105.33.143">
+        <fileTransfer accessType="SFTP" host="47.105.33.143" port="22" sshConfigId="99a59086-1a35-4837-9eae-e8bb85d4b04d" sshConfig="root@47.105.33.143:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
