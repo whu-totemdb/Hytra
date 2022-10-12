@@ -1,4 +1,4 @@
-# Hytra: managing trajectories in a hybird way
+# Hytra: managing trajectories in a hybrid way
 
 ## Supported Queries
 
