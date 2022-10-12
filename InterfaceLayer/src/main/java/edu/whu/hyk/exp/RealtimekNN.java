@@ -96,53 +96,6 @@ public class RealtimekNN {
         return null;
     }
 
-    public static List<Integer> trajmesa(HashMap<Integer, HashSet<Integer>> GT, HashMap<Integer, List<Integer>> TG) {
-        long start = System.currentTimeMillis();
-        PriorityQueue<Integer> req = new PriorityQueue<>(TG.get(query.getTid()));
-        PriorityQueue<Integer> cdq = new PriorityQueue<>(TG.get(query.getTid()));
-        AtomicReference<Double> d_max = new AtomicReference<>((double) 0);
-        double[] spatialDomain = (double[]) passedParams.get("spatialDomain");
-        while (!req.isEmpty()) {
-             Integer gid = req.poll();
-             int[] ij = Decoder.decodeZ2(gid);
-             double deltax = (spatialDomain[2] - spatialDomain[0])/ Math.pow(2, resolution);
-             double deltay = (spatialDomain[3] - spatialDomain[1])/ Math.pow(2, resolution);
-             double lat1 = spatialDomain[0] + (ij[0] + 0.5) * deltax, lon1 = spatialDomain[1] + (ij[1] + 0.5) * deltay;
-            double dist_p_g = GeoUtil.distance(query.getLat(),lat1, query.getLon(),lon1);
-
-            GT.get(gid).forEach(tid -> {
-                int size = trajDataBase.get(tid).size();
-                Point p = trajDataBase.get(tid).get(size - 1);
-                cdq.add(p.getTid());
-                double dist = GeoUtil.distance(query.getLat(),p.getLat(),query.getLon(),p.getLon());
-                d_max.set(Double.max(dist, d_max.get()));
-            });
-
-            if(cdq.size() == k && dist_p_g > d_max.get()) {
-                break;
-            }
-        }
-        PriorityQueue<Integer> res = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer tid1, Integer tid2) {
-                int size1 = trajDataBase.get(tid1).size();
-               Point p1 = trajDataBase.get(tid1).get(size1 - 1);
-                int size2 = trajDataBase.get(tid2).size();
-                Point p2 = trajDataBase.get(tid2).get(size1 - 1);
-                double dist1 = GeoUtil.distance(query.getLat(),p1.getLat(),query.getLon(), p1.getLon());
-                double dist2 = GeoUtil.distance(query.getLat(),p2.getLat(),query.getLon(), p2.getLon());
-                return Double.compare(dist2,dist1);
-            }
-        });
-
-        req.forEach(tid -> {
-            res.add(tid);
-        });
-        long end = System.currentTimeMillis();
-        logger.info("[kNN Query Time] (trajmesa) --- " + (end - start)/1e3);
-        return null;
-    }
-
     public static List<Integer> torch(HashMap<Integer, HashSet<Integer>> GT, HashMap<Integer, List<Integer>> TG) {
         long start = System.currentTimeMillis();
         HashMap<Integer,Integer> candidatesWithUpperBound = new HashMap<>();

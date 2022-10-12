@@ -85,52 +85,6 @@ public class RealtimeRange {
         return  can;
     }
 
-    public static HashSet<Integer> TrajMesa(HashMap<String, Integer> index){
-
-        long start = System.currentTimeMillis();
-        int resolution = (int) passedParams.get("resolution");
-        double[] S = (double[]) passedParams.get("spatialDomain");
-        double deltaX = (S[2] - S[0])/Math.pow(2,(int) passedParams.get("resolution"));
-        double deltaY = (S[3] - S[1])/Math.pow(2,(int) passedParams.get("resolution"));
-
-        int[] ij_s = Decoder.decodeZ2(Encoder.encodeGrid(query_range[0],query_range[1]));
-        int[] ij_e = Decoder.decodeZ2(Encoder.encodeGrid(query_range[2],query_range[3]));
-
-        //query window generation
-        HashSet<Integer> can = new HashSet<>();
-        for(String xz2p : index.keySet()) {
-            String[] items = xz2p.split((String) passedParams.get("separator"));
-            int element = Integer.parseInt(items[0]);
-            int round = Integer.parseInt(items[1]);
-            byte posCode = Byte.parseByte(items[2]);
-            int[] i1j1 = Decoder.decodeZ2(element);
-            int[] i2j2 = Decoder.decodeZ2(Decoder.enlargeGrid(element,round));
-            if(ij_e[0] < i1j1[0] || i2j2[0] < ij_s[0]
-            ||ij_e[1] < i1j1[1] || i2j2[1] < ij_s[1])
-            {
-                //no overlapping, do nothing
-            }
-            else {
-                //生成query_range的poscode
-                double[] half = new double[] {S[0] + deltaX * (i2j2[0] - i1j1[0]) / 2, S[1] + deltaY * (i2j2[1] - i2j2[0]) / 2};
-                byte posCode_qr = 0;
-                if(query_range[0] < half[0] && query_range[1] < half[1]) {posCode_qr = 15;}
-                if(query_range[0] < half[0] && query_range[1] > half[1]) {posCode_qr = 12;}
-                if(query_range[0] > half[0] && query_range[1] < half[1]) {posCode_qr = 10;}
-                if(query_range[0] > half[0] && query_range[1] > half[1]) {posCode_qr = 8;}
-
-                if ((posCode & posCode_qr) != 0){
-                    can.add(index.get(xz2p));
-                }
-
-            }
-        }
-        long end = System.currentTimeMillis();
-
-        logger.info("[Real-time Range Query Time](TrajMesa) --- " + (end - start)/1e3);
-        System.out.println(can.size());
-        return can;
-    }
 
     public static boolean contains(double[] Qr, double lat, double lon){
         return Qr[0] <= lat && lat <= Qr[2] && Qr[1] <= lon && lon <= Qr[3];

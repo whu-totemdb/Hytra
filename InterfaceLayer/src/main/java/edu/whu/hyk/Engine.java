@@ -28,137 +28,31 @@ public class Engine {
 
     public static void main(String[] args) throws IOException {
         //纽约参数
-//        Params.put("city","nyc");
-//        Params.put("spatialDomain", new double[]{40.502873,-74.252339,40.93372,-73.701241});
-//        Params.put("resolution",6);
-//        Params.put("separator", "@");
-//        Params.put("epsilon", 30);
-//        Params.put("dataSize",(int) 1.2e7);
-
-        //悉尼参数
-        Params.put("city","sydney");
-        Params.put("spatialDomain", new double[]{-34,150.6,-33.6,151.3});
+        Params.put("city","nyc");
+        Params.put("spatialDomain", new double[]{40.502873,-74.252339,40.93372,-73.701241});
         Params.put("resolution",6);
         Params.put("separator", "@");
-        Params.put("epsilon",30);
-        Params.put("dataSize",(int)16e6);
+        Params.put("epsilon", 30);
+        Params.put("dataSize",(int) 1.2e7);
+
+        //悉尼参数
+//        Params.put("city","sydney");
+//        Params.put("spatialDomain", new double[]{-34,150.6,-33.6,151.3});
+//        Params.put("resolution",6);
+//        Params.put("separator", "@");
+//        Params.put("epsilon",30);
+//        Params.put("dataSize",(int)16e6);
 
         Encoder.setup(Params);
         Generator.setup(Params);
 
-        //0：生成配置文件
-//        buildTrajDB((String) Params.get("city"), "sample");
-//        IndexingTime.setup(trajDataBase,Params);
-//        IndexingTime.hytra();
-//        System.out.println(PostingList.CP.size());
-//        Generator.generateMap();
-//        Generator.writeLsmConfig(String.format("/mnt/hyk/config/%s/lsm_config.config",Params.get("city")));
-//        Generator.writeKV(String.format("/mnt/hyk/config/%s/put.txt",Params.get("city")));
-
-        //0.1 生成TmC，TG,TC
-//        build((String) Params.get("city"), "jun");
-//        writeTC(String.format("/mnt/hyk/sim/%s/tmc_all_in_%d.txt", (String) Params.get("city"),(int) Params.get("resolution")));
-//        Generator.generateMap();
-//        Generator.writeTCWithCompaction("/mnt/hyk/sim/sydney/tc_all_in_4.txt");
-//        writeTG(String.format("/mnt/hyk/sim/%s/tg_all_in_%d.txt", (String) Params.get("city"),
-//                (int) Params.get("resolution")));
-
-
-        //实验1：indexing time
-        //1.1 缓存TrajDatabase（不用构建posting list）
-//        buildTrajDB((String) Params.get("city"), "sample");
-//        IndexingTime.setup(trajDataBase,Params);
-        //1.2 执行xz2+和xzt
-//        IndexingTime.xz2Plus();
-//        IndexingTime.xzt();
-        //1.3 执行hytra
-//        IndexingTime.hytra();
-        //1.4 执行R-Tree
-//        IndexingTime.rtreeTraj();
-//        IndexingTime.rtreePoint();
-
-        //实验2：real-time range query
-        //2.1：需要先缓存traj database（并构建GT和TlP）
-//        buildTrajDB((String) Params.get("city"), "jun");
-        //2.2：设置查询参数：query range
-//        RealtimeRange.setup(trajDataBase,Params,3000);
-        //2.3：构建xz2+索引
-//        IndexingTime.setup(trajDataBase,Params);
-//        HashMap<String, Integer> xz2Plus = IndexingTime.xz2Plus();
-        //2.4：执行trajmesa
-//        RealtimeRange.TrajMesa(xz2Plus);
-        //2.5: 执行torch
-//        RealtimeRange.torch(PostingList.GT,PostingList.TlP);
-        //2.6: 执行hytra
-//        RealtimeRange.hytra(PostingList.GT,PostingList.TlP);
-        //2.7: 构建rtree
-//        IndexingTime.setup(trajDataBase,Params);
-//        RTree<Integer, com.github.davidmoten.rtree.geometry.Point> rtree = IndexingTime.rtreePoint();
-        //2.8: 执行rtree
-//        RealtimeRange.rtree(rtree);
-
-//        //实验3：real-time kNN
-//        //3.1：需要先缓存traj database（并构建integer版GT和TG）
-//        buildTrajDB((String) Params.get("city"), "jun");
-//        //3.2：设置查询参数：query range
-//        RealtimekNN.setup(trajDataBase,Params,50);
-//        //3.3: 执行hytra
-//        RealtimekNN.hytra(PostingList.GT);
-//        //3.4: 执行trajmesa
-//        RealtimekNN.trajmesa(PostingList.GT, TG);
-//        //3.5: 执行torch
-//        RealtimekNN.torch(PostingList.GT, TG);
-//        //3.6: 构建rtree
-//        IndexingTime.setup(trajDataBase,Params);
-//        RTree<Integer, com.github.davidmoten.rtree.geometry.Point> rtree = IndexingTime.rtreePoint();
-//        //3.7: 执行r-tree
-//        RealtimekNN.rtree(rtree);
-
-        //实验4. historical range query
-//        4.1 缓存trajDB用于R-tree查询
+        //real-time range query
+        //1：需要先缓存traj database（并构建GT和TlP）
         buildTrajDB((String) Params.get("city"), "jun");
-//        4.2 执行合并
-        Generator.generateMap();
-//        4.3 将合并结果更新到索引
-        Generator.updateMergeCTandTC();
-//        4.4 生成sweeping planes
-        HashMap<Integer, HashSet<String>> planes = Generator.generatePlanes();
-//        4.5 生成查询范围
-        HistoricalRange.generateQr(Params, 3000, 0);
-//        4.6 执行no merge情况下的查询
-//        HistoricalRange.spatial_hytra_noMerge();
-//        4.7 执行merge情况下的查询
-        HistoricalRange.spatial_hytra(planes);
-//        4.8 执行R-tree查询
-//        HistoricalRange.rtreeTraj(trajDataBase);
-
-        //实验5. similarity search
-//        buildTrajDB((String) Params.get("city"), "jun");
-        //随机选取tid
-//        ArrayList<Integer> list = new ArrayList<>(trajDataBase.keySet());
-//        int randIdx = new Random().nextInt(list.size());
-//        int tid = list.get(randIdx);
-//        Generator.generateMap();
-//        Generator.updateMergeCTandTC();
-//        int k = 30;
-        //LORS
-//        Simlarity.topkWithLORS(GT, TG.get(tid),k);
-        //LOC with merging
-//        Simlarity.LOC(tid, k, PostingList.mergeCT, PostingList.mergeTC);
-        //LOC no merge
-//        Simlarity.LOC(tid,k,PostingList.CT, PostingList.TC);
-
-        //实验6. index keys
-//        buildTrajDB((String) Params.get("city"), "jun");
-        //1. before merging
-//        System.out.println("#Keys [BEFORE]: " + PostingList.CT.size());
-        //2. after merging
-//        Generator.generateMap();
-        //3. R-tree
-//        IndexingTime.setup(trajDataBase,Params);
-//        IndexingTime.rtreeTraj();
-
-        //实验7. running time breakdown
+        //2：设置查询参数：query range
+        RealtimeRange.setup(trajDataBase,Params,3000);
+        //3: 执行查询
+       RealtimeRange.hytra(PostingList.GT,PostingList.TlP);
 
 
     }
@@ -167,7 +61,7 @@ public class Engine {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection(String.format("jdbc:sqlite:/Users/hayaku/Desktop/gtfs_rt_%s_1d.db",city.substring(0,3)));
+            conn = DriverManager.getConnection(String.format("jdbc:sqlite:your_path_here",city.substring(0,3)));
             String sql = String.format("select * from %s limit %d", tableName,(int)Params.get("dataSize"));
             if((int)Params.get("dataSize") == -1){sql = String.format("select * from %s", tableName);}
             try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -232,7 +126,7 @@ public class Engine {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection(String.format("jdbc:sqlite:/Users/hayaku/Desktop/%s.db",city.substring(0,3)));
+            conn = DriverManager.getConnection(String.format("jdbc:sqlite:your_path_here",city.substring(0,3)));
             int dataSize = (int)Params.get("dataSize");
             String sql = String.format("select * from %s limit %d", tableName,(int)Params.get("dataSize"));
             if(dataSize == -1){sql = String.format("select * from %s", tableName);}
