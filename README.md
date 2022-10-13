@@ -20,7 +20,6 @@ Hytra is able to efficiently answer four typical types of queries now:
   * Enriched indexes.
   * Various similarity measures.
 * Trajectory visulization in New York City
-  * http://shengwang.site/bus/
 
 ## Getting Started
 
@@ -91,8 +90,4 @@ Similarity.topkWithLORS(GT, TG, tid, k);
 The real-time kNN query is used to retrive k highest ranked trajectories based on the specified similarity measure.
 
 ## Main Contributors
-
-* Chen Wu
-* Yuanke Hao
-* Tiaoyao Wen
 
